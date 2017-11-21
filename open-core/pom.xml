@@ -15,6 +15,9 @@
 
     <artifactId>open-core</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>open-core-auth</module>
+    </modules>
 
 
 </project>
