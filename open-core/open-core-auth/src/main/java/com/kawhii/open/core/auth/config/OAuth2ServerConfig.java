@@ -23,7 +23,6 @@ import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.DefaultUserApprovalHandler;
 import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
 import org.springframework.security.oauth2.provider.approval.UserApprovalHandler;
-import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 
@@ -35,6 +34,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @Configuration
 public class OAuth2ServerConfig {
     private static final String USER_RESOURCE_ID = "user";
+
     @Configuration
     @EnableResourceServer
     protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
@@ -50,6 +50,8 @@ public class OAuth2ServerConfig {
                     // Since we want the protected resources to be accessible in the UI as well we need
                     // session creation to be allowed (it's disabled by default in 2.0.6)
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                    .and()
+                    .requestMatchers().antMatchers("/photos/**", "/oauth/users/**", "/oauth/clients/**", "/me")
                     .and()
                     .authorizeRequests()
                     .antMatchers("/me").access("#oauth2.hasScope('read')");
@@ -79,9 +81,8 @@ public class OAuth2ServerConfig {
                     .resourceIds(USER_RESOURCE_ID)
                     .authorizedGrantTypes("authorization_code", "implicit", "client_credentials")
                     .authorities("ROLE_CLIENT")
-                    .scopes("read", "write")
-                    .secret("123123")
-                    .autoApprove(true).redirectUris();
+                    .scopes("read", "trust")
+                    .secret("123123");
             // @formatter:on
         }
 
@@ -98,6 +99,7 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+            oauthServer.realm("sparklr2/client");
         }
     }
 
