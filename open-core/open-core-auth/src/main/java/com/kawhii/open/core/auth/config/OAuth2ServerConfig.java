@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -33,17 +34,25 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
  */
 @Configuration
 public class OAuth2ServerConfig {
+    private static final String USER_RESOURCE_ID = "user";
     @Configuration
     @EnableResourceServer
     protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
         @Override
         public void configure(ResourceServerSecurityConfigurer resources) {
+            resources.resourceId(USER_RESOURCE_ID).stateless(false);
         }
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            super.configure(http);
+            http
+                    // Since we want the protected resources to be accessible in the UI as well we need
+                    // session creation to be allowed (it's disabled by default in 2.0.6)
+                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                    .and()
+                    .authorizeRequests()
+                    .antMatchers("/me").access("#oauth2.hasScope('read')");
         }
     }
 
@@ -67,12 +76,12 @@ public class OAuth2ServerConfig {
 
             // @formatter:off
             clients.inMemory().withClient("admin")
-                    .resourceIds("rid")
+                    .resourceIds(USER_RESOURCE_ID)
                     .authorizedGrantTypes("authorization_code", "implicit", "client_credentials")
                     .authorities("ROLE_CLIENT")
                     .scopes("read", "write")
                     .secret("123123")
-                    .autoApprove(true);
+                    .autoApprove(true).redirectUris();
             // @formatter:on
         }
 
@@ -89,7 +98,6 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-            oauthServer.realm("sparklr2/client");
         }
     }
 
