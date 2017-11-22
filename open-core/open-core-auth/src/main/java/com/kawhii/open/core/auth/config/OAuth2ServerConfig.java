@@ -68,7 +68,7 @@ public class OAuth2ServerConfig {
             // @formatter:off
             clients.inMemory().withClient("admin")
                     .resourceIds("rid")
-                    .authorizedGrantTypes("authorization_code", "implicit")
+                    .authorizedGrantTypes("authorization_code", "implicit", "client_credentials")
                     .authorities("ROLE_CLIENT")
                     .scopes("read", "write")
                     .secret("123123")
