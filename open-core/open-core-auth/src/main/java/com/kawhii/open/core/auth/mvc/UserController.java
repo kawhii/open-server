@@ -12,16 +12,16 @@ import java.security.Principal;
 
 /**
  * 当前用户
+ *
  * @author Carl
- * @since  1.0.0
+ * @since 1.0.0
  */
 @RequestMapping("/me")
 @Controller
 public class UserController {
     @ResponseBody
     @RequestMapping("")
-    public String getPhotoServiceUser(Principal principal)
-    {
+    public String getPhotoServiceUser(Principal principal) {
         return principal.getName();
     }
 }
