@@ -99,14 +99,10 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-            oauthServer.realm("sparklr2/client");
         }
     }
 
     protected static class Stuff {
-
-        @Autowired
-        private ClientDetailsService clientDetailsService;
 
         @Autowired
         private TokenStore tokenStore;
