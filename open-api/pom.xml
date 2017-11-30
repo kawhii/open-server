@@ -16,4 +16,6 @@
     <artifactId>open-api</artifactId>
     <packaging>pom</packaging>
 
+
+    <name>接口模块集</name>
 </project>

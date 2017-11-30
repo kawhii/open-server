@@ -7,18 +7,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>open-server</artifactId>
+        <artifactId>open-webapp</artifactId>
         <groupId>com.kawhii</groupId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>open-webapp</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>open-webapp-wiki</module>
-    </modules>
+    <artifactId>open-webapp-wiki</artifactId>
 
-
-    <name>web模块集</name>
+    <name>文档百科模块</name>
 </project>

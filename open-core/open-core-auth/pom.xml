@@ -51,4 +51,5 @@
             </plugin>
         </plugins>
     </build>
+    <name>认证服务模块</name>
 </project>

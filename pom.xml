@@ -73,4 +73,5 @@
         <finalName>${project.artifactId}</finalName>
     </build>
     <description>卡尔开放平台</description>
+    <name>卡尔开放平台</name>
 </project>
