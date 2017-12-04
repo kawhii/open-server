@@ -37,6 +37,10 @@
 > 需要跟upms进行认证数据对接，注册的用户应用才能进行认证
 
 * 采用spring security oauth2协议
+* 认证方式管理
+
+
+### resource-server
 
 
 ### user-server
