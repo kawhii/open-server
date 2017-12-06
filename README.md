@@ -1,5 +1,12 @@
 # 卡尔开放平台快速开发框架
 
+# 技术选型
+
+| 技术 |名称|版本|官网
+|:---------|:-------|:-------|:-------|
+|swagger-api|内部api文档|2.7.0|http://springfox.github.io/springfox/docs/current/
+|spring boot|容器|1.5.9-RELEASE|http://projects.spring.io/spring-boot/
+
 
 ## 子系统
 
