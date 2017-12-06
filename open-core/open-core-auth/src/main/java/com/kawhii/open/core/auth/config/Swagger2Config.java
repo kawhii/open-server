@@ -22,9 +22,9 @@ import springfox.documentation.spring.web.plugins.Docket;
  * @author Carl
  * @date 2017/12/6
  */
+@Profile({"dev", "test"})
 @Configuration
 @EnableSwagger2
-@Profile({"dev", "test"})
 public class Swagger2Config {
     //http://springfox.github.io/springfox/docs/current/
     @Bean

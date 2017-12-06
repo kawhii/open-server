@@ -82,6 +82,10 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <!--支持模式-->
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
             <dependencies>
                 <dependency>
                     <groupId>io.springfox</groupId>
