@@ -68,10 +68,32 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <swagger.version>2.7.0</swagger.version>
     </properties>
     <build>
         <finalName>${project.artifactId}</finalName>
     </build>
     <description>卡尔开放平台</description>
     <name>卡尔开放平台</name>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>io.springfox</groupId>
+                    <artifactId>springfox-swagger2</artifactId>
+                    <version>${swagger.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>io.springfox</groupId>
+                    <artifactId>springfox-swagger-ui</artifactId>
+                    <version>${swagger.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 </project>
