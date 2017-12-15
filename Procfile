@@ -1,1 +1,1 @@
-web: java -jar open-webapp/open-webapp-wiki/target/open-webapp-wiki.jar
+web: java -jar open-webapp/open-webapp-wiki/target/open-webapp-wiki.jar --server.port=$PORT --server.ssl.enabled=false
