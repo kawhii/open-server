@@ -1,0 +1,1 @@
+web: java -jar open-webapp/open-webapp-wiki/target/open-webapp-wiki.jar
