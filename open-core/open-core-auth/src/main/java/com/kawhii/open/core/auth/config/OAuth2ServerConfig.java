@@ -90,6 +90,9 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+//            endpoints.pathMapping("/oauth/token", "/oauth/access_token"); //把/oauth/token的路径调整为/oauth/access_token
+//            endpoints.pathMapping("/oauth/authorize", "/oauth2/authorize"); //把/oauth/authorize的路径调整为/oauth2/authorize
+
             endpoints.tokenStore(tokenStore).userApprovalHandler(userApprovalHandler)
                     .authenticationManager(authenticationManager);
         }
