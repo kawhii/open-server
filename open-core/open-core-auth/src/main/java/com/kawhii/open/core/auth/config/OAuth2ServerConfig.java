@@ -96,6 +96,7 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+//            oauthServer.authenticationEntryPoint(); //设置认证响应规则，错误时可以自定义响应输出
         }
     }
 
