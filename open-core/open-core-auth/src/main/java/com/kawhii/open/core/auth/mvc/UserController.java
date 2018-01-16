@@ -19,9 +19,19 @@ import java.security.Principal;
 @RequestMapping("/me")
 @Controller
 public class UserController {
+
+    //通过oauth2，采用access_token才能获取到当前数据
     @ResponseBody
     @RequestMapping("")
     public String getPhotoServiceUser(Principal principal) {
         return principal.getName();
+    }
+
+
+    //通过表单登录才能获取到数据
+    @ResponseBody
+    @RequestMapping("/info")
+    public Principal getUserInfo(Principal principal) {
+        return principal;
     }
 }
