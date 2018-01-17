@@ -23,8 +23,8 @@ public class UserController {
     //通过oauth2，采用access_token才能获取到当前数据
     @ResponseBody
     @RequestMapping("")
-    public String getPhotoServiceUser(Principal principal) {
-        return principal.getName();
+    public Principal getPhotoServiceUser(Principal principal) {
+        return principal;
     }
 
 
