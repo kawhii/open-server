@@ -1,0 +1,9 @@
+## 获取token
+POST http://localhost:8080/oauth/token?grant_type=client_credentials
+# Authorization: Basic base64(client_id:client_secret)
+Authorization: Basic YWRtaW46MTIzMTIz
+
+#  oauthServer.allowFormAuthenticationForClients(); 时调用
+#POST http://localhost:8080/oauth/token?client_id=admin&client_secret=123123&grant_type=client_credentials
+
+###

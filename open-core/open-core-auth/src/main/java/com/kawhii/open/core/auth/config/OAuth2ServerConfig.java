@@ -92,13 +92,16 @@ public class OAuth2ServerConfig {
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 //            endpoints.pathMapping("/oauth/token", "/oauth/access_token"); //把/oauth/token的路径调整为/oauth/access_token
 //            endpoints.pathMapping("/oauth/authorize", "/oauth2/authorize"); //把/oauth/authorize的路径调整为/oauth2/authorize
-
             endpoints.tokenStore(tokenStore).userApprovalHandler(userApprovalHandler)
                     .authenticationManager(authenticationManager);
         }
 
         @Override
         public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+            //当开启了form提交，可以不采用base64进行提交获取token，
+            // 可以采用  http://localhost:8080/oauth/token?client_id=admin&client_secret=123123&grant_type=client_credentials
+//            oauthServer.allowFormAuthenticationForClients();
+
 //            oauthServer.authenticationEntryPoint(); //设置认证响应规则，错误时可以自定义响应输出
         }
     }
