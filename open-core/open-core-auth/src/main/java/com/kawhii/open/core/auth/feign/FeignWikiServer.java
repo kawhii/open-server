@@ -1,6 +1,3 @@
-/*
- * 版权所有.(c)2008-2018.广州市森锐科技股份有限公司
- */
 
 package com.kawhii.open.core.auth.feign;
 
