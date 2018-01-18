@@ -13,3 +13,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 spring:
   profiles: dev
+  rabbitmq:
+    host: 192.168.100.249
+    port: 5672
