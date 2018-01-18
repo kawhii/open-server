@@ -1,0 +1,15 @@
+server:
+  port: 8810
+spring:
+  profiles:
+    active: dev
+  application:
+    name: wiki
+
+---
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  profiles: dev

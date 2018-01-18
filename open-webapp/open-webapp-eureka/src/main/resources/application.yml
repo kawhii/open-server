@@ -1,6 +1,14 @@
 server:
   port: 8761
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: dev
 
+---
+spring:
+  profiles: dev
 eureka:
   instance:
     hostname: localhost

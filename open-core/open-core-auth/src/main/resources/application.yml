@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: authorize
+  profiles:
+    active: dev
+
+
+---
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  profiles: dev

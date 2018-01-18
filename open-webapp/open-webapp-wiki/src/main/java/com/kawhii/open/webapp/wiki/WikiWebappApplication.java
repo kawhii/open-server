@@ -6,6 +6,7 @@ package com.kawhii.open.webapp.wiki;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 维基百科应用
@@ -15,6 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 1.0.0
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class WikiWebappApplication {
     public static void main(String[] args) {
         SpringApplication.run(WikiWebappApplication.class, args);

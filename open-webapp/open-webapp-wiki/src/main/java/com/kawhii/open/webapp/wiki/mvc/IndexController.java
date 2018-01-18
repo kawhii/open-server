@@ -6,6 +6,8 @@ package com.kawhii.open.webapp.wiki.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 首页控制器
@@ -20,5 +22,11 @@ public class IndexController {
     @RequestMapping("/")
     public String index() {
         return "index";
+    }
+
+    @RequestMapping("/name")
+    @ResponseBody
+    public String name(@RequestParam String name) {
+        return "wiki:" + name;
     }
 }
