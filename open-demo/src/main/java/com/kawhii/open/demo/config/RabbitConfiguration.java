@@ -1,8 +1,19 @@
 
-package com.kawhii.open.webapp.wiki.config;
+/*
+ * 版权所有.(c)2008-2018. 卡尔科技工作室
+ */
 
-import com.kawhii.open.webapp.wiki.mq.TextMessageContentDelegate;
-import org.springframework.amqp.core.*;
+/*
+ * 版权所有.(c)2008-2018. 卡尔科技工作室
+ */
+
+package com.kawhii.open.demo.config;
+
+import com.kawhii.open.demo.mq.TextMessageContentDelegate;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
@@ -10,6 +21,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * Rabbit配置
+ *
  * @author Carl
  * @version 创建时间：2018/1/18
  * @since 1.0.0

@@ -4,9 +4,6 @@
 
 package com.kawhii.open.webapp.wiki.mvc;
 
-import com.kawhii.open.webapp.wiki.config.RabbitConfiguration;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,8 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class IndexController {
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
 
     @RequestMapping("/")
     public String index() {
@@ -32,7 +27,6 @@ public class IndexController {
     @RequestMapping("/name")
     @ResponseBody
     public String name(@RequestParam String name) {
-        rabbitTemplate.convertAndSend(RabbitConfiguration.queueName, "hello：" + name);
         return "wiki:" + name;
     }
 }

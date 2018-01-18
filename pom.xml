@@ -21,6 +21,7 @@
         <module>open-support</module>
         <module>open-api</module>
         <module>open-core</module>
+        <module>open-demo</module>
     </modules>
 
     <dependencies>
