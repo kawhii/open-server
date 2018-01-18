@@ -17,6 +17,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>open-webapp-wiki</module>
+        <module>open-webapp-eureka</module>
     </modules>
 
     <dependencies>
@@ -26,5 +27,5 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-    <name>web模块集</name>
+    <!--<name>web模块集</name>-->
 </project>

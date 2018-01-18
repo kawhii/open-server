@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ 版权所有.(c)2008-2017. 卡尔科技工作室
+  ~ 版权所有.(c)2008-2018. 卡尔科技工作室
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -10,18 +10,18 @@
         <artifactId>open-webapp</artifactId>
         <groupId>com.kawhii</groupId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>open-webapp-wiki</artifactId>
+    <artifactId>open-webapp-eureka</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -33,5 +33,4 @@
             </plugin>
         </plugins>
     </build>
-    <!--<name>文档百科模块</name>-->
 </project>

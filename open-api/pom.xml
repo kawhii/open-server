@@ -17,5 +17,5 @@
     <packaging>pom</packaging>
 
 
-    <name>接口模块集</name>
+    <!--<name>接口模块集</name>-->
 </project>
