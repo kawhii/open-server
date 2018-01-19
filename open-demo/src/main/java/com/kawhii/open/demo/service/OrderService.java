@@ -8,6 +8,8 @@ package com.kawhii.open.demo.service;
 import com.kawhii.open.demo.domain.Order;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,6 +28,6 @@ public interface OrderService {
 
 
     //获取id
-    @GetMapping(value = "/eureka-orders/{id}")
-    Order loadByItemCode(@PathVariable("id") String id);
+    @PostMapping(value = "/eureka-orders")
+    Order loadByItemCode(@RequestParam("id") String id);
 }
