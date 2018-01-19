@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -23,16 +24,17 @@ import java.util.List;
  * @since 1.0.0
  */
 @RequestMapping("/orders")
-@Controller
+@RestController
 public class OrderController {
     Logger LOGGER = LoggerFactory.getLogger(getClass());
     @Autowired
     private FeignOrderService orderService;
 
+
     //获取所有订单
     @GetMapping(value = "/fetch")
     public List<Order> findAll() {
-        LOGGER.debug("OrderController.fetch");
+        LOGGER.info("OrderController.fetch");
         return orderService.findAll();
     }
 
