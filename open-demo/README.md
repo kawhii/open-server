@@ -12,7 +12,8 @@ java -jar open-demo.jar
 java -jar open-demo.jar --server.port=2200
 ```
 
-1. 访问测试
+2. 访问测试
 http://localhost:8761/ 看到是多个服务
+
 http://localhost:8610/hello 刷新后看到不同的服务端口
 
