@@ -2,6 +2,8 @@
  * 版权所有.(c)2008-2018. 卡尔科技工作室
  */
 
+
+
 package com.kawhii.open.demo.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;

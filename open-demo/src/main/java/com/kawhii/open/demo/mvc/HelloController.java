@@ -22,6 +22,6 @@ public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        return "HelloController--" + restTemplate.getForEntity("http://DEMO/eureka/hello", String.class).getBody();
+        return "HelloController--" + restTemplate.getForEntity("http://DEMO/eureka-hello/hello", String.class).getBody();
     }
 }

@@ -17,3 +17,47 @@ http://localhost:8761/ 看到是多个服务
 
 http://localhost:8610/hello 刷新后看到不同的服务端口
 
+
+### Feign
+
+1.配置：
+添加依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-feign</artifactId>
+</dependency>
+```
+
+2.新增注解支持 `@EnableFeignClients`
+
+3.声明服务端
+```java
+@FeignClient("DEMO")
+public interface OrderService {
+
+    //获取所有订单
+    @GetMapping(value = "/fetch")
+    List<Order> findAll();
+
+
+    //获取id
+    @GetMapping(value = "/{id}")
+    Order loadByItemCode(@PathVariable("id") String id);
+}
+```
+
+4.依赖使用
+```java
+@Autowired
+private OrderService orderService;
+```
+---
+
+查询所有：
+http://localhost:8610/orders/fetch
+
+根据id查询：
+http://localhost:8610/orders/abc
+
