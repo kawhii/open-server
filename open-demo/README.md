@@ -26,7 +26,11 @@ http://localhost:8610/hello 刷新后看到不同的服务端口
 ```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-feign</artifactId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+ </dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
 </dependency>
 ```
 
