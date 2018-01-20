@@ -65,3 +65,9 @@ http://localhost:8610/orders/fetch
 根据id查询：
 http://localhost:8610/orders/abc
 
+
+### SSO
+
+访问：http://localhost:8610/dashboard 都需要登录，默认走github登录
+其余均可以正常访问
+

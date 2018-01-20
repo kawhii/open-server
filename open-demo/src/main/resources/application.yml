@@ -2,7 +2,9 @@ server:
   port: 8610
 spring:
   profiles:
-    active: dev
+    active:
+      - dev
+      - github
   application:
     name: demo
 
@@ -16,3 +18,21 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+---
+spring:
+  profiles: github
+security:
+  sessions: always
+  oauth2:
+    sso:
+      loginPath: /dashboard/login
+    client:
+      clientId: 1d2f92c3966ff7f7d9f9
+      clientSecret: 5458b6de215cb2da30a2e3d26a41f1b45ef02046
+      accessTokenUri: https://github.com/login/oauth/access_token
+      userAuthorizationUri: https://github.com/login/oauth/authorize
+      clientAuthenticationScheme: form
+    resource:
+      userInfoUri: https://api.github.com/user
+      preferTokenInfo: false
